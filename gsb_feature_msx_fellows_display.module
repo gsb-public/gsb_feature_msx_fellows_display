@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GSB MSx Fellows Display feature.
+ */
+
+include_once 'gsb_msx_fellows_display.features.inc';
