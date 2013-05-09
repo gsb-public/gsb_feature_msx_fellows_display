@@ -4,4 +4,4 @@
  * Code for the GSB MSx Fellows Display feature.
  */
 
-include_once 'gsb_msx_fellows_display.features.inc';
+include_once 'gsb_feature_msx_fellows_display.features.inc';

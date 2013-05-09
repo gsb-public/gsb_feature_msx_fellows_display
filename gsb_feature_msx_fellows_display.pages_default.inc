@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * gsb_msx_fellows_display.pages_default.inc
+ * gsb_feature_msx_fellows_display.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function gsb_msx_fellows_display_default_page_manager_pages() {
+function gsb_feature_msx_fellows_display_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;

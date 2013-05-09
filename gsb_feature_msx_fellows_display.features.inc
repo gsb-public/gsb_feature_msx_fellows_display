@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * gsb_msx_fellows_display.features.inc
+ * gsb_feature_msx_fellows_display.features.inc
  */
 
 /**
@@ -17,6 +17,6 @@ function gsb_feature_msx_fellows_display_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function gsb_msx_fellows_display_views_api() {
+function gsb_feature_msx_fellows_display_views_api() {
   return array("api" => "3.0");
 }
