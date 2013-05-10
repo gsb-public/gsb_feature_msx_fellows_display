@@ -15,7 +15,7 @@ function gsb_feature_msx_fellows_display_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'MSx Listing';
   $page->admin_description = '';
-  $page->path = 'msx';
+  $page->path = 'programs/msx/academic-experience/fellows';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
@@ -43,7 +43,7 @@ function gsb_feature_msx_fellows_display_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'gsb-standard-page-two';
+  $display->layout = 'gsb-landing-standard-page-one';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -51,15 +51,20 @@ function gsb_feature_msx_fellows_display_default_page_manager_pages() {
       'main' => NULL,
       'quicklinks' => NULL,
       'sidebar' => NULL,
+      'fullheader' => NULL,
+      'maintop' => NULL,
+      'mainmiddlefirst' => NULL,
+      'mainmiddlesecond' => NULL,
+      'mainbottom' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'The Fellows';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'main';
+    $pane->panel = 'fullheader';
     $pane->type = 'block';
     $pane->subtype = 'views--exp-msx_fellows-list';
     $pane->shown = TRUE;
@@ -78,10 +83,28 @@ function gsb_feature_msx_fellows_display_default_page_manager_pages() {
     $pane->position = 0;
     $pane->locks = array();
     $display->content['new-1'] = $pane;
-    $display->panels['main'][0] = 'new-1';
+    $display->panels['fullheader'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
-    $pane->panel = 'main';
+    $pane->panel = 'fullheader';
+    $pane->type = 'lastname_az_links';
+    $pane->subtype = 'lastname_az_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['fullheader'][1] = 'new-2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
+    $pane->panel = 'fullheader';
     $pane->type = 'views_panes';
     $pane->subtype = 'msx_fellows-list';
     $pane->shown = TRUE;
@@ -109,10 +132,10 @@ function gsb_feature_msx_fellows_display_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['main'][1] = 'new-2';
+    $display->content['new-3'] = $pane;
+    $display->panels['fullheader'][2] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

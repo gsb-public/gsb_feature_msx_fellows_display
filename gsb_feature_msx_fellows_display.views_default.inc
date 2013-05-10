@@ -94,12 +94,17 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['pager']['options']['more_button_text'] = 'Show More';
   $handler->display->display_options['pager']['options']['use_go_to_top_link'] = 1;
   $handler->display->display_options['pager']['options']['use_go_to_top_text'] = 'Back to the Top';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
   $handler->display->display_options['style_options']['columns'] = '5';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'no results found.';
+  $handler->display->display_options['empty']['area']['format'] = 'panopoly_wysiwyg_text';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -199,7 +204,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['field_last_name_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_last_name_value']['expose']['operator_id'] = 'field_last_name_value_op';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['operator'] = 'field_last_name_value_op';
-  $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'letter_filter';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'last_name';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
