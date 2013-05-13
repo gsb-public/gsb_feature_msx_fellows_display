@@ -5,3 +5,13 @@
  */
 
 include_once 'gsb_feature_msx_fellows_display.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function gsb_feature_msx_fellows_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_state['view']->name == 'msx_fellows') {
+    $form['#prefix'] = t('Filter by');
+    $form['last_name']['#type'] = 'hidden';
+  }
+}
