@@ -39,7 +39,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
+        'bef_collapsible' => 0,
         'is_secondary' => 0,
         'bef_filter_description' => '',
         'tokens' => array(
@@ -56,7 +56,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
+        'bef_collapsible' => 0,
         'is_secondary' => 0,
         'bef_filter_description' => '',
         'tokens' => array(
