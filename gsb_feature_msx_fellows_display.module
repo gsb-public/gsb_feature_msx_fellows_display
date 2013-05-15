@@ -11,7 +11,7 @@ include_once 'gsb_feature_msx_fellows_display.features.inc';
  */
 function gsb_feature_msx_fellows_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
   if ($form_state['view']->name == 'msx_fellows') {
-    $form['#prefix'] = t('Filter by');
+    $form['#prefix'] = '<strong>' . t('Filter by') . '</strong>';
     $form['last_name']['#type'] = 'hidden';
   }
 }

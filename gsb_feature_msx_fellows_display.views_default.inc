@@ -36,11 +36,10 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'secondary_label' => 'Advanced options',
     ),
     'term_node_tid_depth' => array(
-      'bef_format' => 'bef_ul',
+      'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
-        'bef_select_all_none_nested' => 0,
-        'bef_collapsible' => 0,
+        'bef_collapsible' => 1,
         'is_secondary' => 0,
         'bef_filter_description' => '',
         'tokens' => array(
@@ -54,11 +53,10 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       ),
     ),
     'term_node_tid_depth_1' => array(
-      'bef_format' => 'bef_ul',
+      'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
-        'bef_select_all_none_nested' => 0,
-        'bef_collapsible' => 0,
+        'bef_collapsible' => 1,
         'is_secondary' => 0,
         'bef_filter_description' => '',
         'tokens' => array(
@@ -143,6 +141,22 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['filters']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['filters']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['value'] = array(
+    10606 => '10606',
+    10611 => '10611',
+    10651 => '10651',
+    10656 => '10656',
+    10681 => '10681',
+    10726 => '10726',
+    10746 => '10746',
+    10756 => '10756',
+    10781 => '10781',
+    10786 => '10786',
+    10791 => '10791',
+    10816 => '10816',
+    10856 => '10856',
+    10851 => '10851',
+  );
   $handler->display->display_options['filters']['term_node_tid_depth']['exposed'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Industry';
@@ -152,14 +166,20 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-    8 => 0,
-    9 => 0,
+    11 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    71 => 0,
+    56 => 0,
+    66 => 0,
+    26 => 0,
+    41 => 0,
+    46 => 0,
+    76 => 0,
+    86 => 0,
   );
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth']['group_info']['label'] = 'Has taxonomy terms (with depth)';
   $handler->display->display_options['filters']['term_node_tid_depth']['group_info']['identifier'] = 'term_node_tid_depth';
   $handler->display->display_options['filters']['term_node_tid_depth']['group_info']['remember'] = FALSE;
@@ -171,11 +191,18 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
   $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'industry';
   $handler->display->display_options['filters']['term_node_tid_depth']['hierarchy'] = 1;
-  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '0';
+  $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '9';
   /* Filter criterion: Content: Has taxonomy terms (with depth) */
   $handler->display->display_options['filters']['term_node_tid_depth_1']['id'] = 'term_node_tid_depth_1';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['table'] = 'node';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['value'] = array(
+    10916 => '10916',
+    11231 => '11231',
+    11511 => '11511',
+    11801 => '11801',
+    12071 => '12071',
+  );
   $handler->display->display_options['filters']['term_node_tid_depth_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator_id'] = 'term_node_tid_depth_1_op';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['label'] = 'Region';
@@ -185,18 +212,24 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-    8 => 0,
-    9 => 0,
+    11 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    71 => 0,
+    56 => 0,
+    66 => 0,
+    26 => 0,
+    41 => 0,
+    46 => 0,
+    76 => 0,
+    86 => 0,
   );
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['type'] = 'select';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['vocabulary'] = 'region';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['hierarchy'] = 1;
-  $handler->display->display_options['filters']['term_node_tid_depth_1']['depth'] = '0';
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['depth'] = '9';
   /* Filter criterion: Field: Last Name (field_last_name) */
   $handler->display->display_options['filters']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['filters']['field_last_name_value']['table'] = 'field_data_field_last_name';
