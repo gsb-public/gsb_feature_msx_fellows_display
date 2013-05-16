@@ -16,7 +16,10 @@ function gsb_feature_msx_fellows_display_default_page_manager_pages() {
   $page->admin_title = 'MSx Listing';
   $page->admin_description = '';
   $page->path = 'programs/msx/academic-experience/fellows';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
