@@ -29,14 +29,14 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;  
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
     ),
     'term_node_tid_depth' => array(
-      'bef_format' => 'bef',
+      'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
@@ -53,7 +53,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       ),
     ),
     'term_node_tid_depth_1' => array(
-      'bef_format' => 'bef',
+      'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
@@ -246,6 +246,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['field_last_name_value']['group'] = 2;
   $handler->display->display_options['filters']['field_last_name_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_last_name_value']['expose']['operator_id'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['label'] = 'Last Name';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['operator'] = 'field_last_name_value_op';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'last_name';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['remember_roles'] = array(
