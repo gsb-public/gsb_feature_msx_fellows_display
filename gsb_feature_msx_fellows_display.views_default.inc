@@ -36,7 +36,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'secondary_label' => 'Advanced options',
     ),
     'term_node_tid_depth' => array(
-      'bef_format' => 'default',
+      'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
@@ -53,7 +53,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       ),
     ),
     'term_node_tid_depth_1' => array(
-      'bef_format' => 'default',
+      'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
@@ -246,7 +246,6 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['filters']['field_last_name_value']['group'] = 2;
   $handler->display->display_options['filters']['field_last_name_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_last_name_value']['expose']['operator_id'] = 'field_last_name_value_op';
-  $handler->display->display_options['filters']['field_last_name_value']['expose']['label'] = 'Last Name';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['operator'] = 'field_last_name_value_op';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'last_name';
   $handler->display->display_options['filters']['field_last_name_value']['expose']['remember_roles'] = array(
@@ -270,21 +269,6 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
-  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-  $handler->display->display_options['exposed_form_overrides'] = array(
-    'term_node_tid_depth' => '',
-    'term_node_tid_depth_1' => '',
-    'field_last_name_value' => '',
-  );
   $export['msx_fellows'] = $view;
 
   return $export;
