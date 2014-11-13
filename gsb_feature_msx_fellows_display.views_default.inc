@@ -266,6 +266,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'list');
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['pane_title'] = 'MSx Fellows';
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['msx_fellows'] = $view;
