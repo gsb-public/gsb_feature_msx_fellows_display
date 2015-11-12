@@ -1,9 +1,10 @@
 name = GSB Feature MSx Fellows Display
 core = 7.x
 package = GSB
-version = 7.x-1.0
+version = 7.x-5.02
 project = gsb_feature_msx_fellows_display
 dependencies[] = better_exposed_filters
+dependencies[] = ds
 dependencies[] = page_manager
 dependencies[] = views_content
 dependencies[] = views_load_more

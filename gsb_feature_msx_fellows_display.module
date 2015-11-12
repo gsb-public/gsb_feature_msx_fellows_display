@@ -11,8 +11,21 @@ include_once 'gsb_feature_msx_fellows_display.features.inc';
  */
 function gsb_feature_msx_fellows_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
   if ($form_state['view']->name == 'msx_fellows') {
-    $form['#prefix'] = '<strong>' . t('Filter by') . '</strong>';
+   // $form['submit']['#access'] = FALSE;
+//    $form['submit']['#value'] = 'Done';
+    //$form['#prefix'] = '<strong>' . t('Filter by') . '</strong>';
     $form['last_name']['#type'] = 'hidden';
+    $form['#action'] = '';
+    $form['secondary']['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+    );
+    //$form['submit']['#attributes']['class'][] = '.ctools-auto-submit-click';
+    //$form['secondary']['done']['#attributes']['class'][] = '.ctools-auto-submit-click';
+    $form['secondary']['clear-all'] = array(
+      '#type' => 'button',
+      '#value' => t('Clear All'),
+    );
   }
 }
 
