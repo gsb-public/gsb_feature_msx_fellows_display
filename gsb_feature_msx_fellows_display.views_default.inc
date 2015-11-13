@@ -22,7 +22,6 @@ function gsb_feature_msx_fellows_display_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['css_class'] = 'view-list-teaser';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -30,7 +29,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
@@ -46,12 +45,15 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
+        'bef_select_all_none_nested' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            1 => 'vocabulary',
             'secondary_label' => NULL,
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
@@ -81,7 +83,6 @@ function gsb_feature_msx_fellows_display_views_default_views() {
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
-        'any_label' => NULL,
         'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
@@ -96,12 +97,15 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
+        'bef_select_all_none_nested' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            1 => 'vocabulary',
             'secondary_label' => NULL,
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
@@ -131,7 +135,6 @@ function gsb_feature_msx_fellows_display_views_default_views() {
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
-        'any_label' => NULL,
         'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
@@ -146,6 +149,7 @@ function gsb_feature_msx_fellows_display_views_default_views() {
       'bef_format' => 'default',
       'more_options' => array(
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -179,7 +183,6 @@ function gsb_feature_msx_fellows_display_views_default_views() {
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
-        'any_label' => NULL,
         'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
@@ -198,6 +201,8 @@ function gsb_feature_msx_fellows_display_views_default_views() {
     'any_label' => NULL,
     'filter_rewrite_values' => NULL,
   );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '24';
   $handler->display->display_options['pager']['options']['offset'] = '0';
