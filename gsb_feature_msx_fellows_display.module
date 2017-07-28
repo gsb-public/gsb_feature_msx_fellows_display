@@ -10,23 +10,69 @@ include_once 'gsb_feature_msx_fellows_display.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function gsb_feature_msx_fellows_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_state['view']->name == 'msx_fellows') {
-   // $form['submit']['#access'] = FALSE;
-//    $form['submit']['#value'] = 'Done';
-    //$form['#prefix'] = '<strong>' . t('Filter by') . '</strong>';
+    if ($form_state['view']->name == 'msx_fellows' && $form['#id'] == 'views-exposed-form-msx-fellows-list') {
     $form['last_name']['#type'] = 'hidden';
     $form['#action'] = '';
     $form['secondary']['done'] = array(
       '#type' => 'submit',
       '#value' => t('Done'),
     );
-    //$form['submit']['#attributes']['class'][] = '.ctools-auto-submit-click';
-    //$form['secondary']['done']['#attributes']['class'][] = '.ctools-auto-submit-click';
     $form['secondary']['clear-all'] = array(
       '#type' => 'button',
       '#value' => t('Clear All'),
     );
   }
+  if ($form_state['view']->name == 'msx_fellows' && $form['#id'] == 'views-exposed-form-msx-fellows-graduation-year-list') {
+      $form['search']['#attributes']['class'][] = 'ctools-auto-submit-exclude';
+      $form['#action'] = '';
+      $form['last_name']['#type'] = 'hidden';
+
+      if(isset($_REQUEST['industry_tid_msxfellow']) && !empty($_REQUEST['industry_tid_msxfellow']) ) {
+        $form_state['input']['industry_tid_msxfellow'] = $_REQUEST['industry_tid_msxfellow'];
+      }
+      if(isset($_REQUEST['region_tid_msxfellow']) && !empty($_REQUEST['region_tid_msxfellow']) ) {
+        $form_state['input']['region_tid_msxfellow'] = $_REQUEST['region_tid_msxfellow'];
+      }
+      if(isset($_REQUEST['last_name']) && !empty($_REQUEST['last_name']) ) {
+        $form_state['input']['last_name'] = $_REQUEST['last_name'];
+      }
+     
+      $fieldset = array();
+      $fieldset = array(
+          '#title' => t('Narrow your results'),
+          '#type' => 'fieldset',
+          '#weight' => 100,
+          '#collapsible' => TRUE,
+          '#collapsed' => (empty($form_state['input']['industry_tid_msxfellow']) && empty($form_state['input']['region_tid_msxfellow'])) ? TRUE : FALSE,
+      );
+      $fieldset['industry_tid_msxfellow'] = $form['industry_tid_msxfellow'];
+      $fieldset['industry_tid_msxfellow']['#title'] = t('Industry');
+      $form['industry_tid_msxfellow'] = FALSE;
+      unset($form['#info']['filter-term_node_tid_depth']);
+
+      $fieldset['region_tid_msxfellow'] = $form['region_tid_msxfellow'];
+      $fieldset['region_tid_msxfellow']['#title'] = t('Region');
+      $form['region_tid_msxfellow'] = FALSE;
+      unset($form['#info']['filter-term_node_tid_depth_1']);
+      $fieldset['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+      );
+      $fieldset['clear-all'] = array(
+        '#type' => 'button',
+        '#value' => t('Clear All'),
+      );
+      $new_form = array();
+      foreach ($form as $key => $value) {
+        $new_form[$key] = $value;
+        if ($key == 'field_instance_text_value') {
+          $new_form['narrow_search'] = $fieldset;
+        }
+      }
+      $form = $new_form;
+      drupal_add_js(drupal_get_path('module', 'gsb_feature_msx_fellows_display') . '/js/gsb_msx_fellows_exposed_markup.js');
+  }
+
 }
 
 function gsb_feature_msx_fellows_display_gsb_fpp_customizations_icons_alter(&$icons) {
