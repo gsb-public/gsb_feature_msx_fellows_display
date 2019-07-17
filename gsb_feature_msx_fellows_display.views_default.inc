@@ -202,13 +202,14 @@ function gsb_feature_msx_fellows_display_views_default_views() {
     'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '24';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['more_button_text'] = 'Show More';
   $handler->display->display_options['pager']['options']['use_go_to_top_link'] = 1;
   $handler->display->display_options['pager']['options']['use_go_to_top_text'] = 'Back to the Top';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
   $handler->display->display_options['row_options']['grouping'] = 0;
